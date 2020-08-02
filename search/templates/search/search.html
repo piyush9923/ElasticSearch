@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ELK</title>
+        <style>
+            div {
+                margin: 20px;
+            }
+            table, td, th {
+				border: 1px solid black;
+				border-collapse: collapse;
+				padding: 5px;
+				text-align: center;
+			}
+        </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Training Session - Feedback</a>
+        </nav>
+        <div>
+            <h1>Search</h1>
+
+            <form method="get">
+                <input id="q" name="q" type="text" placeholder="your search...">
+            </form>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Training Rating</th>
+                        <th>Improvement Required</th>
+                        <th>Feedback</th>
+                    </tr>
+                </thead>
+                <tbody>
+            {% for item in feedback %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.rate }}</td>
+                    <td>{{ item.check }}</td>
+                    <td>{{ item.feed }}</td>
+                </tr>
+            {% empty %}
+                <h2>Sorry, no matching entry found!.</h2>
+            {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
