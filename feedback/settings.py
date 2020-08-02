@@ -25,7 +25,7 @@ SECRET_KEY = 'zq0kj(2+(zc83i@5jgio$y(#1+(xgve163(34@4c%f#8aqiqly'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 
 ELASTICSEARCH_DSL= {
     'default': {
-        'hosts': 'localhost:9200'
+        'hosts': 'http://ec2-13-212-16-160.ap-southeast-1.compute.amazonaws.com:9200'
     }
 }
 
